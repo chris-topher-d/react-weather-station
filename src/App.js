@@ -4,8 +4,8 @@ import Header from './Components/Header/Header';
 import Search from './Components/Search/Search'
 import Current from './Components/Current/Current';
 import FiveDay from './Components/FiveDay/FiveDay';
-const apiKey = 'unique API key here';
-const apiURL = 'http://api.openweathermap.org/data/2.5/';
+const apiKey = '&APPID=bc9e94139a6e5d87e9cbbf191497fe41';
+const apiURL = 'https://api.openweathermap.org/data/2.5/';
 
 class App extends Component {
   constructor(props) {
