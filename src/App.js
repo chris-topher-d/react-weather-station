@@ -62,8 +62,10 @@ class App extends Component {
     .then(data => {
       let arr = data.list.filter(item => {
         let time = new Date(item.dt * 1000);
-        if (time.toString().split(' ')[4] === '15:00:00') {
-          return item;
+        if (time.getTimezoneOffset() === 360) {
+          if (time.toString().split(' ')[4] === '15:00:00') return item;
+        } else if (time.getTimezoneOffset() === 300) {
+          if (time.toString().split(' ')[4] === '16:00:00') return item;
         }
       });
 
