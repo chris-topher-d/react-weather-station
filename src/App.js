@@ -4,7 +4,8 @@ import Header from './Components/Header/Header';
 import Search from './Components/Search/Search'
 import Current from './Components/Current/Current';
 import FiveDay from './Components/FiveDay/FiveDay';
-const apiKey = '&APPID=bc9e94139a6e5d87e9cbbf191497fe41';
+
+import { api } from './apiKey';
 const apiURL = 'https://api.openweathermap.org/data/2.5/';
 
 class App extends Component {
@@ -34,7 +35,7 @@ class App extends Component {
 
   getWeather(location) {
     let th = this;
-    fetch(apiURL + 'weather?' + location + '&units=imperial' + apiKey)
+    fetch(apiURL + 'weather?' + location + '&units=imperial' + api)
     .then(response => response.json())
     .then(data => {
       th.setState({
@@ -57,7 +58,7 @@ class App extends Component {
       this.setState({error: 'Please enter city name or 5 digit zip code'});
     });
 
-    fetch(apiURL + 'forecast?' + location + '&units=imperial' + apiKey)
+    fetch(apiURL + 'forecast?' + location + '&units=imperial' + api)
     .then(response => response.json())
     .then(data => {
       let arr = data.list.filter(item => {
