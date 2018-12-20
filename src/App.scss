@@ -5,10 +5,10 @@
 .App {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   min-width: 550px;
-  max-height: 100vh;
+  min-height: 100vh;
 
   .week {
     display: flex;
