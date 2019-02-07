@@ -23,7 +23,7 @@ class App extends Component {
     this.findWeather = this.findWeather.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
         let lat = position.coords.latitude;
